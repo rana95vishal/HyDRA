@@ -1,17 +1,23 @@
 function [dataTrimmed, orig_row, num_crit, EndeavourRank] = EndeavourTrim(data)
+    %some lines in this file have been mmodified to work with the output file from Endeavor after the updates in their web portal and data sources
+    %original code has been commented out at places
+    
     orig_row = size(data,1);
     orig_col = size(data,2);
-    num_crit = (orig_col-3)/3;
-    EndeavourRank = data(:,1);
+    %num_crit = (orig_col-3)/3;
+    num_crit = orig_col - 2;
+    %EndeavourRank = data(:,1);
+    EndeavourRank = data(:,orig_col);
     %get rid of all columns other tha p values
-    for i = 1:5
-       data(:,1)=[]; 
-    end
+    
+    %for i = 1:5
+    %   data(:,1)=[]; 
+    %end
 
-    for j = 2:num_crit
-       data(:,j)=[];
-       data(:,j)=[];
-    end
+    %for j = 2:num_crit
+    %   data(:,j)=[];
+    %   data(:,j)=[];
+    %end
 
     maximum = max(data,[],1);
     minimum = min(data,[],1);
@@ -24,6 +30,7 @@ function [dataTrimmed, orig_row, num_crit, EndeavourRank] = EndeavourTrim(data)
         end
     end
 
-    dataTrimmed = data;
+    %dataTrimmed = data;
+    dataTrimmed = data(:,2:num_crit);
 
 end
