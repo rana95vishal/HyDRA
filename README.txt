@@ -58,3 +58,5 @@ endeavour data.  MATLAB (of any version) is required for running this software.
  2. Run "CrossValidationScript.m"
  3. Result.xlsx and onsetRank.xlsx should match those in "TestCodeAutism\TestResult".  "Result.xlsx" 
  contains full ranking for all onset genes, and "onsetRank.xlsx" contains only the rankings of onset genes.
+ 
+ Reference: Kim, Minji, Farzad Farnoud, and Olgica Milenkovic. "HyDRA: gene prioritization via hybrid distance-score rank aggregation." Bioinformatics 31.7 (2015): 1034-1043.
